@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gasoek+One&family=Marck+Script&family=Merriweather:wght@300&family=Pacifico&display=swap"
+    rel="stylesheet">
+
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fjalla+One&family=Gasoek+One&family=Lobster&family=Marck+Script&family=Merriweather:wght@300&family=Pacifico&family=Playfair+Display&display=swap"
+    rel="stylesheet">
+
+
+
+
+
+  <style>
+    body {}
+
+    .container {
+
+      background: url("sta.webp");
+      background-size: 1000px 1050px;
+      background-repeat: no-repeat;
+
+      border: 10px solid black;
+      width: 1000px;
+      height: 1050px;
+      align-items: center;
+      margin-left: 250px;
+
+
+    }
+
+    h3 {
+      font-size: 40px;
+      font-family: 'Gasoek One', sans-serif;
+      text-align: center;
+      color: white;
+      /*font-family: 'Marck Script', cursive;
+font-family: 'Merriweather', serif;*/
+      font-family: 'Pacifico', cursive;
+    }
+
+    .name {
+      font-size: 20px;
+      font-family: 'Caprasimo', cursive;
+      color: rgb(246, 245, 245);
+
+
+    }
+
+    hr {
+      border: bold rgb(236, 230, 230);
+    }
+
+    .star {
+      font-size: 20px;
+      font-family: 'Caprasimo', cursive;
+      color: white;
+      margin: 30px;
+      margin-left: 5px;
+
+
+    }
+
+
+    .total {
+      text-align: center;
+      padding-top: 20px;
+      font-family: 'Caprasimo', cursive;
+      color: white;
+
+    }
+
+    .container2 {
+
+      background: url("sta.webp");
+      background-size: 620px 650px;
+      background-repeat: no-repeat;
+
+      border: 10px solid black;
+      width: 620px;
+      height: 650px;
+      margin-top: 40px;
+
+      font-size: 20px;
+      font-family: 'Caprasimo', cursive;
+      color: rgb(246, 245, 245);
+    }
+
+    table {
+      width: 100%;
+      height: auto;
+
+    }
+
+    tr {
+      height: 15px;
+    }
+  </style>
+
+
+
+
+</head>
+
+<body>
+
+
+  <div class="container">
+    <h3>Starbee Cafe</h3>
+    <hr>
+    <div class="name">
+
+      <label style="padding-left: 50px;">Enter Name:</label>
+      <input type="text" placeholder="" style="box-shadow:4px 4px 4px black ; margin-right: 15px;" id="name"
+        onclick="printit()">
+      <label style="padding-left: 200px;">Enter Mobile no. :</label>
+      <input type="text" placeholder="" style="box-shadow:4px 4px 4px black ; margin-right: 15px; " id="mobile"
+        onclick="printit()">
+    </div>
+    <hr>
+
+    <div class="star">
+      <div class="American">
+
+        <input type="checkbox" id="cafe1" value="0" name="Americano" value="American" onclick="check()">
+        <label style="margin-right:50px ; ">AMERICANO</label>
+        <input type="text" id="price" value="0" placeholder="Price" disabled
+          style="box-shadow: 4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" >
+        <input type="text" id="qty" value="1" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px; " onchange="tAmount()">
+        <input type="text" id="dis" placeholder=" Diacount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ;  margin-right: 15px;" value="0" onchange="tAmount()">
+        <input type="text" id="total" placeholder="Total" disabled value="0"
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;">
+      </div>
+
+
+      <div class="cortado" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe2" name="Corta" value="Cortado">
+        <label style="margin-right: 79px; ">CORTADO</label>
+        <input type="text" id="price1" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px; " onchange="tAmount()" value="0">
+        <input type="text" id="qty1" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="dis1" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ;  margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total1" placeholder="Total" disabled value="0"
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;">
+      </div>
+
+      <div class="Vienna" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe3" name="Vienna" value="vien">
+        <label style="margin-right: 95px;">VIENNA </label>
+        <input type="text" id="Price2" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity2" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount2" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total2" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="Gib" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe4" name="gib" value="gibl">
+        <label style="margin-right: 55px;">GIBRALTAR </label>
+        <input type="text" id="Price3" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity3" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount3" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total3" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="mac" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe5" name="mac" value="macch">
+        <label style="margin-right: 51px;">MACCHIATO </label>
+        <input type="text" id="Price4" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity4" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount4" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total4" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="affo" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe6" name="affo" value="affog">
+        <label style="margin-right: 62px;">AFFOGATO</label>
+        <input type="text" id="Price5" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity5" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount5" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total5" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="esp" style="padding-top: 35px; " onclick="check()">
+        <input type="checkbox" id="cafe7" name="esp" value="espr">
+        <label style="margin-right: 72px;">ESPRESSO</label>
+        <input type="text" id="Price6" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity6" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount6" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total6" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="picco" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe8" name="picco" value="picc">
+        <label style="margin-right: 39px;">PICCO LATTE</label>
+        <input type="text" id="Price7" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity7" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount7" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total7" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="breve" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe9" name="breve" value="brev">
+        <label style="margin-right:44px ;">CAFE BREVE</label>
+        <input type="text" id="Price8" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity8" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount8" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total8" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+      </div>
+
+      <div class="eye" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe10" name="eye" value="beye">
+        <label style="margin-right: 56px;">BLACK EYE</label>
+        <input type="text" id="Price9" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity9" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount9" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total9" placeholder="Total" disabled
+          stylce="box-shadow:4px 4px 4px black ; margin-right: 15px; " value="0">
+      </div>
+
+      <div class="cap" style="padding-top: 35px;" onclick="check()">
+        <input type="checkbox" id="cafe11" name="cap" value="capp">
+
+        <label style="margin-right: 48px;">CAPPUCINO </label>
+        <input type="text" id="Price10" placeholder="Price" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="Quantity10" placeholder="Quantity" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="1">
+        <input type="text" id="Discount10" placeholder="Discount in Rs" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" onchange="tAmount()" value="0">
+        <input type="text" id="total10" placeholder="Total" disabled
+          style="box-shadow:4px 4px 4px black ; margin-right: 15px;" value="0">
+
+      </div>
+    </div>
+    <div class="total">
+      <div style="padding-right: 14px;" id="Total">
+        <label>Total:</label>
+        <input type="text" name="box1" id="anime" placeholder="" value="" style="box-shadow:4px 4px 4px black ;"
+          onclick="allSum()">
+      </div>
+      <div id="Discount" style="padding-top: 10px; padding-left: 42px; ">
+        <label>Discount: </label>
+        <input type="text" name="box1" id="box2" placeholder="" style="box-shadow:4px 4px 4px black ; "
+          onclick="allSum()">
+        <select id="cars" style="box-shadow:4px 4px 4px black ; margin-right: 15px; ">
+          <option value="volvo">in Rs</option>
+          <option value="saab">in Dollar</option>
+          <option value="opel">in %</option>
+          <option value="audi">in Yen</option>
+        </select>
+      </div>
+      <div style="padding-top: 10px; padding-right: 95px;">
+        <label for="">Payble Amount: </label>
+        <input type="text" name="box1" id="box3" placeholder="" style="box-shadow:4px 4px 4px black ; "
+          onclick="allSum()">
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 20px; ">
+      <button onclick="pageprint()" ondblclick="printit()">Print</button>
+      <button>Reload</button>
+    </div>
+  </div>
+
+  <div class="container2" style="margin-left: 450px;">
+    <h1 style="text-align: center;">Starbee Cafe's Bill</h1>
+    <hr>
+    <label style="padding-left:20px;">Name: </label>
+    <input type="text" placeholder="" style="box-shadow:4px 4px 4px black ;" id="name1" onclick="printit()">
+    <label style="margin-left: 70px;">Mobile No. :</label>
+    <input type="text" placeholder="" style="box-shadow:4px 4px 4px black ;" id="mobile1" onclick="printit()">
+    <hr>
+
+
+    <table border="1">
+
+      <tr>
+        <td>name</td>
+        <td>price</td>
+        <td>quantity</td>
+        <td>discount</td>
+        <td>total</td>
+      </tr>
+      <tr>
+        <td id="tda1"></td>
+        <td id="tda2"></td>
+        <td id="tda3"></td>
+        <td id="tda4"></td>
+        <td id="tda5"></td>
+      </tr>
+      <tr>
+        <td id="tdb1"></td>
+        <td id="tdb2"></td>
+        <td id="tdb3"></td>
+        <td id="tdb4"></td>
+        <td id="tdb5"></td>
+      </tr>
+      <tr>
+        <td id="tdc1"></td>
+        <td id="tdc2"></td>
+        <td id="tdc3"></td>
+        <td id="tdc4"></td>
+        <td id="tdc5"></td>
+      </tr>
+      <tr>
+        <td id="tdd1"></td>
+        <td id="tdd2"></td>
+        <td id="tdd3"></td>
+        <td id="tdd4"></td>
+        <td id="tdd5"></td>
+      </tr>
+      <tr>
+        <td id="tde1"></td>
+        <td id="tde2"></td>
+        <td id="tde3"></td>
+        <td id="tde4"></td>
+        <td id="tde5"></td>
+      </tr>
+      <tr>
+        <td id="tdf1"></td>
+        <td id="tdf2"></td>
+        <td id="tdf3"></td>
+        <td id="tdf4"></td>
+        <td id="tdf5"></td>
+      </tr>
+      <tr>
+        <td id="tdi1"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div class="total" style="padding-top: 90px;">
+      <div style="padding-right: 14px; " id="Total">
+        <label>Total:</label>
+        <input type="text" name="box1" id="peace" placeholder="" style="box-shadow:4px 4px 4px black ;"
+          onclick="alldis()">
+      </div>
+      <div class="Discount" style="padding-top: 10px; padding-left: 42px; ">
+        <label for="">Discount: </label>
+        <input type="text" name="dec" id="dec" placeholder="" style="box-shadow:4px 4px 4px black ; margin-right: 85px;"
+          onclick="alldis()">
+
+      </div>
+
+
+      <div style="padding-top: 10px; padding-right: 95px;" id="pay">
+        <label>Payble Amount: </label>
+        <input type="text" name="box1" id="amount" placeholder="" style="box-shadow:4px 4px 4px black ; "
+          onclick="alldis()">
+      </div>
+    </div>
+    <div>
+      <h1 style="padding-left: 200px;">DHANAYVAD</h1>
+    </div>
+    <div>
+      <button onclick="window.print()">Print</button>
+    </div>
+  </div>
+
+
+</body>
+<script>
+  function check(){
+    let a = document.getElementById('price').value = 500;
+    let b = document.getElementById('qty').value = 200;
+    let c = document.getElementById('dis').value =20;
+
+  }
+  function tAmount() {
+    var price = parseInt(document.getElementById('price').value);
+    var qty = parseInt(document.getElementById('qty').value);
+    var dis = parseInt(document.getElementById('dis').value);
+    var total = (price * qty) - dis;
+    document.getElementById('total').value = total;
+
+    var price1 = parseInt(document.getElementById('price1').value);
+    var qty1 = parseInt(document.getElementById('qty1').value);
+    var dis1 = parseInt(document.getElementById('dis1').value);
+    var total1 = (price1 * qty1) - dis1;
+    document.getElementById('total1').value = total1;
+
+    var Price2 = parseInt(document.getElementById('Price2').value);
+    var Quantity2 = parseInt(document.getElementById('Quantity2').value);
+    var Discount2 = parseInt(document.getElementById('Discount2').value);
+    var total2 = (Price2 * Quantity2) - Discount2;
+    document.getElementById('total2').value = total2;
+
+    var Price3 = parseInt(document.getElementById('Price3').value);
+    var Quantity3 = parseInt(document.getElementById('Quantity3').value);
+    var Discount3 = parseInt(document.getElementById('Discount3').value);
+    var total3 = (Price3 * Quantity3) - Discount3;
+    document.getElementById('total3').value = total3;
+
+    var Price4 = parseInt(document.getElementById('Price4').value);
+    var Quantity4 = parseInt(document.getElementById('Quantity4').value);
+    var Discount4 = parseInt(document.getElementById('Discount4').value);
+    var total4 = (Price4 * Quantity4) - Discount4;
+    document.getElementById('total4').value = total4;
+
+    var Price5 = parseInt(document.getElementById('Price5').value);
+    var Quantity5 = parseInt(document.getElementById('Quantity5').value);
+    var Discount5 = parseInt(document.getElementById('Discount5').value);
+    var total5 = (Price5 * Quantity5) - Discount5;
+    document.getElementById('total5').value = total5;
+
+    var Price6 = parseInt(document.getElementById('Price6').value);
+    var Quantity6 = parseInt(document.getElementById('Quantity6').value);
+    var Discount6 = parseInt(document.getElementById('Discount6').value);
+    var total6 = (Price6 * Quantity6) - Discount6;
+    document.getElementById('total6').value = total6;
+
+    var Price7 = parseInt(document.getElementById('Price7').value);
+    var Quantity7 = parseInt(document.getElementById('Quantity7').value);
+    var Discount7 = parseInt(document.getElementById('Discount7').value);
+    var total7 = (Price7 * Quantity7) - Discount7;
+    document.getElementById('total7').value = total7;
+
+    var Price8 = parseInt(document.getElementById('Price8').value);
+    var Quantity8 = parseInt(document.getElementById('Quantity8').value);
+    var Discount8 = parseInt(document.getElementById('Discount8').value);
+    var total8 = (Price8 * Quantity8) - Discount8;
+    document.getElementById('total8').value = total8;
+
+    var Price9 = parseInt(document.getElementById('Price9').value);
+    var Quantity9 = parseInt(document.getElementById('Quantity9').value);
+    var Discount9 = parseInt(document.getElementById('Discount9').value);
+    var total9 = (Price9 * Quantity9) - Discount9;
+    document.getElementById('total9').value = total9;
+
+    var Price10 = parseInt(document.getElementById('Price10').value);
+    var Quantity10 = parseInt(document.getElementById('Quantity10').value);
+    var Discount10 = parseInt(document.getElementById('Discount10').value);
+    var total10 = (Price10 * Quantity10) - Discount10;
+    document.getElementById('total10').value = total10;
+
+  }
+
+  function check() {
+    var price = document.getElementById("price");
+    var qty = document.getElementById("qty");
+    var dis = document.getElementById("dis");
+    var total = document.getElementById("total");
+    var cal = document.getElementById("cafe1")
+
+    if (cal.checked) {
+      price.removeAttribute("disabled");
+      qty.removeAttribute("disabled");
+      dis.removeAttribute("disabled");
+      total.removeAttribute("disabled");
+
+    }
+    else {
+      price.disabled = "true";
+      qty.disabled = "true";
+      dis.disabled = "true";
+      total.disabled = "true";
+    }
+
+    var Price1 = document.getElementById("price1");
+    var Quantity1 = document.getElementById("qty1");
+    var Discount1 = document.getElementById("dis1");
+    var total1 = document.getElementById("total1");
+    var cal1 = document.getElementById("cafe2")
+
+    if (cal1.checked) {
+      Price1.removeAttribute("disabled");
+      Quantity1.removeAttribute("disabled");
+      Discount1.removeAttribute("disabled");
+      total1.removeAttribute("disabled");
+
+    }
+    else {
+      Price1.disabled = "true";
+      Quantity1.disabled = "true";
+      Discount1.disabled = "true";
+      total1.disabled = "true";
+    }
+
+    var Price2 = document.getElementById("Price2");
+    var Quantity2 = document.getElementById("Quantity2");
+    var Discount2 = document.getElementById("Discount2");
+    var total2 = document.getElementById("total2");
+    var cal2 = document.getElementById("cafe3")
+
+    if (cal2.checked) {
+      Price2.removeAttribute("disabled");
+      Quantity2.removeAttribute("disabled");
+      Discount2.removeAttribute("disabled");
+      total2.removeAttribute("disabled");
+
+    }
+    else {
+      Price2.disabled = "true";
+      Quantity2.disabled = "true";
+      Discount2.disabled = "true";
+      total2.disabled = "true";
+    }
+
+    var Price3 = document.getElementById("Price3");
+    var Quantity3 = document.getElementById("Quantity3");
+    var Discount3 = document.getElementById("Discount3");
+    var total3 = document.getElementById("total3");
+    var cal3 = document.getElementById("cafe4")
+
+    if (cal3.checked) {
+      Price3.removeAttribute("disabled");
+      Quantity3.removeAttribute("disabled");
+      Discount3.removeAttribute("disabled");
+      total3.removeAttribute("disabled");
+    }
+    else {
+      Price3.disabled = "true";
+      Quantity3.disabled = "true";
+      Discount3.disabled = "true";
+      total3.disabled = "true";
+    }
+
+    var Price4 = document.getElementById("Price4");
+    var Quantity4 = document.getElementById("Quantity4");
+    var Discount4 = document.getElementById("Discount4");
+    var total4 = document.getElementById("total4");
+    var cal4 = document.getElementById("cafe5")
+
+    if (cal4.checked) {
+      Price4.removeAttribute("disabled");
+      Quantity4.removeAttribute("disabled");
+      Discount4.removeAttribute("disabled");
+      total4.removeAttribute("disabled");
+
+    }
+    else {
+      Price4.disabled = "true";
+      Quantity4.disabled = "true";
+      Discount4.disabled = "true";
+      total4.disabled = "true";
+    }
+
+    var Price5 = document.getElementById("Price5");
+    var Quantity5 = document.getElementById("Quantity5");
+    var Discount5 = document.getElementById("Discount5");
+    var total5 = document.getElementById("total5");
+    var cal5 = document.getElementById("cafe6")
+
+    if (cal5.checked) {
+      Price5.removeAttribute("disabled");
+      Quantity5.removeAttribute("disabled");
+      Discount5.removeAttribute("disabled");
+      total5.removeAttribute("disabled");
+
+    }
+    else {
+      Price5.disabled = "true";
+      Quantity5.disabled = "true";
+      Discount5.disabled = "true";
+      total5.disabled = "true";
+    }
+
+    var Price6 = document.getElementById("Price6");
+    var Quantity6 = document.getElementById("Quantity6");
+    var Discount6 = document.getElementById("Discount6");
+    var total6 = document.getElementById("total6");
+    var cal6 = document.getElementById("cafe7")
+
+    if (cal6.checked) {
+      Price6.removeAttribute("disabled");
+      Quantity6.removeAttribute("disabled");
+      Discount6.removeAttribute("disabled");
+      total6.removeAttribute("disabled");
+
+    }
+    else {
+      Price6.disabled = "true";
+      Quantity6.disabled = "true";
+      Discount6.disabled = "true";
+      total6.disabled = "true";
+    }
+    var Price7 = document.getElementById("Price7");
+    var Quantity7 = document.getElementById("Quantity7");
+    var Discount7 = document.getElementById("Discount7");
+    var total7 = document.getElementById("total7");
+    var cal7 = document.getElementById("cafe8")
+
+    if (cal7.checked) {
+      Price7.removeAttribute("disabled");
+      Quantity7.removeAttribute("disabled");
+      Discount7.removeAttribute("disabled");
+      total7.removeAttribute("disabled");
+
+    }
+    else {
+      Price7.disabled = "true";
+      Quantity7.disabled = "true";
+      Discount7.disabled = "true";
+      total7.disabled = "true";
+    }
+
+    var Price8 = document.getElementById("Price8");
+    var Quantity8 = document.getElementById("Quantity8");
+    var Discount8 = document.getElementById("Discount8");
+    var total8 = document.getElementById("total8");
+    var cal8 = document.getElementById("cafe9")
+
+    if (cal8.checked) {
+      Price8.removeAttribute("disabled");
+      Quantity8.removeAttribute("disabled");
+      Discount8.removeAttribute("disabled");
+      total8.removeAttribute("disabled");
+
+    }
+    else {
+      Price8.disabled = "true";
+      Quantity8.disabled = "true";
+      Discount8.disabled = "true";
+      total8.disabled = "true";
+    }
+
+    var Price9 = document.getElementById("Price9");
+    var Quantity9 = document.getElementById("Quantity9");
+    var Discount9 = document.getElementById("Discount9");
+    var total9 = document.getElementById("total9");
+    var cal9 = document.getElementById("cafe10")
+
+    if (cal9.checked) {
+      Price9.removeAttribute("disabled");
+      Quantity9.removeAttribute("disabled");
+      Discount9.removeAttribute("disabled");
+      total9.removeAttribute("disabled");
+
+    }
+    else {
+      Price9.disabled = "true";
+      Quantity9.disabled = "true";
+      Discount9.disabled = "true";
+      total9.disabled = "true";
+    }
+    var Price10 = document.getElementById("Price10");
+    var Quantity10 = document.getElementById("Quantity10");
+    var Discount10 = document.getElementById("Discount10");
+    var total10 = document.getElementById("total10");
+    var cal10 = document.getElementById("cafe11")
+
+    if (cal10.checked) {
+      Price10.removeAttribute("disabled");
+      Quantity10.removeAttribute("disabled");
+      Discount10.removeAttribute("disabled");
+      total10.removeAttribute("disabled");
+
+    }
+    else {
+      Price10.disabled = "true";
+      Quantity10.disabled = "true";
+      Discount10.disabled = "true";
+      total10.disabled = "true";
+    }
+
+
+  }
+  function allSum() {
+
+
+    var total = parseInt(document.getElementById("total").value);
+    var total1 = parseInt(document.getElementById("total1").value);
+    var total2 = parseInt(document.getElementById("total2").value);
+    var total3 = parseInt(document.getElementById("total3").value);
+    var total4 = parseInt(document.getElementById("total4").value);
+    var total5 = parseInt(document.getElementById("total5").value);
+    var total6 = parseInt(document.getElementById("total6").value);
+    var total7 = parseInt(document.getElementById("total7").value);
+    var total9 = parseInt(document.getElementById("total9").value);
+    var total10 = parseInt(document.getElementById("total10").value);
+
+
+    var pisa = parseInt(total + total1 + total2 + total3 + total4 + total5 + total6 + total7 + total8 + total9 + total10);
+    document.getElementById('anime').value = pisa;
+
+    var dis = parseInt(document.getElementById("dis").value);
+    var dis1 = parseInt(document.getElementById("dis1").value);
+    var dis2 = parseInt(document.getElementById("Discount2").value);
+    var dis3 = parseInt(document.getElementById("Discount3").value);
+    var dis4 = parseInt(document.getElementById("Discount4").value);
+    var dis5 = parseInt(document.getElementById("Discount5").value);
+    var dis6 = parseInt(document.getElementById("Discount6").value);
+    var dis7 = parseInt(document.getElementById("Discount7").value);
+    var dis8 = parseInt(document.getElementById("Discount8").value);
+
+    var dis9 = parseInt(document.getElementById("Discount9").value);
+    var dis10 = parseInt(document.getElementById("Discount10").value);
+
+    var del = parseInt(dis + dis1 + dis2 + +dis3 + dis4 + dis5 + dis6 + dis7 + dis9 + dis10);
+    document.getElementById('box2').value = del;
+
+    var pay = pisa - del;
+    document.getElementById('box3').value = pay;
+
+
+  }
+
+
+
+  function printit() {
+
+
+
+    var naam = document.getElementById("name").value;
+    var mob = document.getElementById("mobile").value;
+    document.getElementById("name1").value = naam;
+    document.getElementById("mobile1").value = mob;
+
+    var first = document.getElementById("total")
+    var second = dofirscument.getElementById("total1");
+    var third = document.getElementById("total2");
+    var fourth = document.getElementById("total3");
+    var fifth = document.getElementById("total4");
+    var sixth = document.getElementById("total5");
+    var seventh = document.getElementById("total6");
+    var nineth = document.getElementById("total7");
+    var tenth = document.getElementById("total8");
+    var first = document.getElementById("total9");
+    var first = document.getElementById("tota10");
+  }
+  function pageprint() {
+    var total = parseInt(document.getElementById("total").value);
+    var total1 = parseInt(document.getElementById("total1").value);
+    var total2 = parseInt(document.getElementById("total2").value);
+    var total3 = parseInt(document.getElementById("total3").value);
+    var total4 = parseInt(document.getElementById("total4").value);
+    var total5 = parseInt(document.getElementById("total5").value);
+    var total6 = parseInt(document.getElementById("total6").value);
+    var total7 = parseInt(document.getElementById("total7").value);
+    var total9 = parseInt(document.getElementById("total9").value);
+    var total10 = parseInt(document.getElementById("total10").value);
+   var demon = parseInt(total + total1 + total2 + total3 + total4 + total5 + total6 + total7 + total8 + total9 + total10);
+    document.getElementById('peace').value = demon;
+    var dis = parseInt(document.getElementById("dis").value);
+    var dis1 = parseInt(document.getElementById("dis1").value);
+    var dis2 = parseInt(document.getElementById("Discount2").value);
+    var dis3 = parseInt(document.getElementById("Discount3").value);
+    var dis4 = parseInt(document.getElementById("Discount4").value);
+    var dis5 = parseInt(document.getElementById("Discount5").value);
+    var dis6 = parseInt(document.getElementById("Discount6").value);
+    var dis7 = parseInt(document.getElementById("Discount7").value);
+    var dis8 = parseInt(document.getElementById("Discount8").value);
+
+    var dis9 = parseInt(document.getElementById("Discount9").value);
+    var dis10 = parseInt(document.getElementById("Discount10").value);
+
+    var deep = parseInt(dis + dis1 + dis2 + +dis3 + dis4 + dis5 + dis6 + dis7 + dis9 + dis10);
+    document.getElementById('dec').value = deep;
+
+    var payam = demon - deep;
+    document.getElementById('amount').value = payam;
+
+
+
+    if (cafe1.checked) {
+
+      var price1 = document.getElementById("price").value;
+      var quantity1 = document.getElementById("qty").value;
+      var discount1 = document.getElementById("dis").value;
+      var total1 = document.getElementById("total").value;
+
+      document.getElementById("tda1").innerHTML = "AMERICANO";
+      document.getElementById("tda2").innerHTML = price1;
+      document.getElementById('tda3').innerHTML = quantity1;
+      document.getElementById("tda4").innerHTML = discount1;
+      document.getElementById("tda5").innerHTML = total1;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe2.checked) {
+
+      var price2 = document.getElementById("price1").value;
+      var quantity2 = document.getElementById("qty1").value;
+      var discount2 = document.getElementById("dis1").value;
+      var total2 = document.getElementById("total1").value;
+
+      document.getElementById("tdb1").innerHTML = "CORTADO";
+      document.getElementById("tdb2").innerHTML = price2;
+      document.getElementById('tdb3').innerHTML = quantity2;
+      document.getElementById("tdb4").innerHTML = discount2;
+      document.getElementById("tdb5").innerHTML = total2;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe3.checked) {
+
+      var price3 = document.getElementById("Price2").value;
+      var quantity3 = document.getElementById("quantity2").value;
+      var discount3 = document.getElementById("Discount2").value;
+      var total3 = document.getElementById("total2").value;
+
+      document.getElementById("tdc1").innerHTML = "VIENNA";
+      document.getElementById("tdc2").innerHTML = price3;
+      document.getElementById('tdc3').innerHTML = quantity3;
+      document.getElementById("tdc4").innerHTML = discount3;
+      document.getElementById("tdc5").innerHTML = total3;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe4.checked) {
+
+      var price4 = document.getElementById("Price3").value;
+      var quantity4 = document.getElementById("Quantity3").value;
+      var discount4 = document.getElementById("Discount3").value;
+      var total4 = document.getElementById("total3").value;
+
+      document.getElementById("tdd1").innerHTML = "GIBRALTAR ";
+      document.getElementById("tdd2").innerHTML = price4;
+      document.getElementById('tdd3').innerHTML = quantity4;
+      document.getElementById("tdd4").innerHTML = discount4;
+      document.getElementById("tdd5").innerHTML = total4;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe5.checked) {
+
+      var price5 = document.getElementById("Price4").value;
+      var quantity5 = document.getElementById("Quantity4").value;
+      var discount5 = document.getElementById("Discount4").value;
+      var total5 = document.getElementById("total4").value;
+
+      document.getElementById("tde1").innerHTML = "MACCHIATO";
+      document.getElementById("tde2").innerHTML = price5;
+      document.getElementById('tde3').innerHTML = quantity5;
+      document.getElementById("tde4").innerHTML = discount5;
+      document.getElementById("tde5").innerHTML = total5;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe6.checked) {
+
+      var price5 = document.getElementById("Price5").value;
+      var quantity5 = document.getElementById("Quantity5").value;
+      var discount5 = document.getElementById("Discount5").value;
+      var total5 = document.getElementById("total5").value;
+
+      document.getElementById("tde1").innerHTML = "AFFOGATO";
+      document.getElementById("tde2").innerHTML = price5;
+      document.getElementById('tde3').innerHTML = quantity5;
+      document.getElementById("tde4").innerHTML = discount5;
+      document.getElementById("tde5").innerHTML = total5;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+    if (cafe7.checked) {
+
+      var price6 = document.getElementById("Price6").value;
+      var quantity6 = document.getElementById("Quantity6").value;
+      var discount6 = document.getElementById("Discount6").value;
+      var total6 = document.getElementById("total6").value;
+
+      document.getElementById("tdf1").innerHTML = "ESPRESSO";
+      document.getElementById("tdf2").innerHTML = price6;
+      document.getElementById('tdf3').innerHTML = quantity6;
+      document.getElementById("tdf4").innerHTML = discount6;
+      document.getElementById("tdf5").innerHTML = total6;
+    }
+    else {
+      price.disabled = "true";
+      quantity.disabled = "true";
+      discount.disabled = "true";
+      total.disabled = "true";
+    }
+
+
+
+  }
+
+
+
+</script>
+
+</html>
